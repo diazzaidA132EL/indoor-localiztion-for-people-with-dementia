@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+.column {
+  height:200px;
+  margin-top: 20px;
+  padding: 10px;
+  flex: 20%;
+}
+
+body{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(175,220,236);
+}
+
+.container {
+    width: 700px;
+    overflow: hidden;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.box-3 p{
+    height:25px;
+    padding: 5px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: aliceblue;
+}
+.cont-2 {
+    width: 40px;
+    padding: 15px 0;
+    margin: auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 5fr;
+}
+
+.box-3{
+    width:50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2{
+    margin-top: 140px;
+}
+
+main{
+    margin-top: 80px;
+}
+h4{
+    margin-top: 80px;
+}
+
+.image{
+    height: 150px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-2{
+    height: 40px;
+    margin-top: 12px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+
+    header.navbar {
+        flex-direction: column;
+      }
+     
+    header.navbar .nav-list ul {
+        flex-wrap: wrap;
+        column-gap: .5rem;
+    }
+    
+    .featured-image{
+        width: 100%;
+        height: auto;
+    }
+
+    .image{
+        height: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .image-2{
+        height: 40px;
+    }
+
+    .container {
+        width: 500px;
+        overflow: hidden;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    
+    .cont-2 {
+        width: 50px;
+        padding: 20px 0;
+        margin: auto;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .column {
+        height:200px;
+        margin-top: 20px;
+        padding: 10px;
+        flex: 20%;
+      }
+      
+      body{
+          text-align: center;
+          font-family: 'Lato', sans-serif;
+          background-color: rgb(175,220,236);
+      }
+      .btn
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+}

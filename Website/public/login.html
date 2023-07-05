@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Masuk</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Theme style -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/css/adminlte.css"
+    />
+  </head>
+  <body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-primary">
+      <a class="navbar-brand" href="#"> Findblue </a>
+    </nav>
+    <div class="hold-transition login-page">
+      <div class="login-box">
+        <div class="login-logo mb-5">
+          <img src="./assets/img/user.jpeg" style="width:80px" alt="" />
+          <!-- <a href=""><b>Login</b></a> -->
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+          <div class="card-body login-card-body">
+            <form id="form-login" action="" method="post">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  name="username"
+                  class="form-control username"
+                  placeholder="Nama Pengguna"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control password"
+                  placeholder="Kata Sandi"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-submit btn-primary btn-block">
+                Masuk
+              </button>
+            </form>
+
+            <p class="my-4">
+              Pengguna Baru?
+              <a href="register" class="text-center">Buat Akun </a>
+            </p>
+          </div>
+          <!-- /.login-card-body -->
+        </div>
+      </div>
+      <!-- /.login-box -->
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 4 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <!-- AdminLTE App -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/js/adminlte.js"></script>
+
+    <script>
+      var base_url = "";
+      $(function () {
+        $.get("/env", function (data) {
+          base_url = data.path;
+        });
+      });
+      $(document).ready(function () {
+        $("#form-login").on("submit", function (e) {
+          e.preventDefault();
+          var username = $(".username").val();
+          if (username == "") {
+            alert("Username wajib diisi");
+            return false;
+          }
+          var password = $(".password").val();
+          if (password == "") {
+            alert("Password wajib diisi");
+            return;
+          }
+
+          proses_login({ username, password });
+        });
+
+        function proses_login(data) {
+          // var base_url = "http://127.0.0.1:3000";
+          var api = "/api/auth/login";
+          $.ajax({
+            url: base_url + api,
+            dataType: "json",
+            method: "post",
+            data: data,
+            success: function (result) {
+              alert(result.message);
+              localStorage.setItem("token", result.token);
+              window.location = base_url;
+              // localStorage.getItem("token")
+              // location.reload();
+            },
+            error: function (error) {
+              console.log(error);
+              alert(JSON.parse(error.responseText).message);
+            },
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css1" />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <h2><strong>Hi, Selamat datang di Findblue!</strong></h2>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCpS0YA5K-XoiO7ZSeo2P2tkIdESS2u39Y",
+        authDomain: "data-ta-92c87.firebaseapp.com",
+        databaseURL: "https://data-ta-92c87-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "data-ta-92c87",
+        storageBucket: "data-ta-92c87.appspot.com",
+        messagingSenderId: "756923592265",
+        appId: "1:756923592265:web:60bfa45b9e12c6952f9998"
+      };
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+    </script>
+
+    <main>
+      <a href="/lokasi">
+        <button type="button" class="btn btn-light btn-sm btn-primary-spacing">
+          Pelacakan Lokasi dan Pengawasan Aktivitas
+        </button>
+      </a>
+      <div class="container">
+          <img src="./assets/img/lokasi.png" class="image" alt="map" />
+      </div>
+      
+      <div class="cont-2">
+        <div class="history">
+          <a href="/history"><img src="./assets/img/history.png" class="image-2" alt="history" /></a>
+        </div>
+      <div class="battery">
+        <img  id="persen" src="./assets/img/battery4.png" height="60px" />
+      </div>
+      <div class="box-3">
+        <p><span id="reading-battery"></span>%</p>
+      </div>
+    </div>
+    <script src="app.js" defer></script>
+    </main>
+
+    <h4>
+      <strong><i>"We care so you can care more"</i></strong>
+    </h4>
+    <a href="/login">
+      <button type="button" class="btn btn-light btn-sm btn-primary-spacing">
+        Keluar
+      </button>
+    </a>
+        <!-- jQuery -->
+        <script
+        src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+        crossorigin="anonymous"
+      ></script>
+      <!-- Bootstrap 4 -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"
+      ></script>
+  </body>
+</html>

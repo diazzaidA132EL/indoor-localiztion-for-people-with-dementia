@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(175,220,236);
+}
+
+.box{
+    width:260px;
+    margin-bottom : 60px;
+}
+
+.box h6{
+    padding: 10px;
+    height:40px;
+    margin-top: 50px;
+    margin-left: 40px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.popup {
+    top:0;
+    transform: translate(-50%,-50%) scale (0.1);
+    visibility: hidden;
+}
+
+.open-popup{
+    visibility: visible;
+    top:0;
+    transform: translate(-50%,-50%) scale (1);
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+.pop{
+    text-align: center;
+}
+
+h4{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.box-2 p{
+    padding: 10px;
+    height:40px;
+    margin-top: 50px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.popup p{
+    font-weight: bolder;
+}
+
+.tracker{
+    position : absolute;
+    border-radius :50%;
+}
+
+.tracker-2{
+    position : absolute;
+    border-radius :50%;
+}
+
+.floor-plan{
+    position: relative;
+    width:auto;
+    max-width: 405px;
+    max-height: 467px;
+    margin:auto;
+}
+
+.box h6{
+    padding: 10px;
+    height:40px;
+    margin-top: 50px;
+    margin-left: 40px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.box-2{
+    width:260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn{
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+    .map{
+        width: 100%;
+        height: auto;
+    }
+
+   .box h6{
+        padding: 10px;
+        height:40px;
+        margin-top: 50px;
+        margin-left: 40px;
+        border-radius: 30px;
+        text-align: center;
+        background-color: aliceblue;
+    }
+    
+    .box-2{
+        width:260px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn{
+        margin-left: 40px;
+        margin-top: 60px;
+    }
+    
+}

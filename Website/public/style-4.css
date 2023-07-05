@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(175,220,236);
+    margin-top: 30px;
+    margin-left: 20px;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+h2{
+    margin-left: 120px;
+    margin-right: auto;
+}
+p{
+    font-size: smaller;
+    font-weight: bolder;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-2{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
